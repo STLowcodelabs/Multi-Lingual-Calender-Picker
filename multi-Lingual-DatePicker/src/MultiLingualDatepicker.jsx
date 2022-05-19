@@ -1,6 +1,6 @@
 import { Component, createElement,React,useState,Select } from "react";
 // import {ru} from "date-fns/esm/locale/ru";
-import{enUS,ru} from "date-fns/esm/locale"
+import{enUS,ru,ar} from "date-fns/esm/locale"
 
 // registerLocale("ptBR", ptBR);
 // registerLocale("en", en);
@@ -18,6 +18,10 @@ const languageOptions=[
     },{
         label:"ru",value:ru
     }
+    ,{
+        label:"ar",value:ar
+    }
+
 ];
 // const [language, setLanguage] = React.useState("ptBR");
 export default class MultiLingualDatepicker extends Component {
