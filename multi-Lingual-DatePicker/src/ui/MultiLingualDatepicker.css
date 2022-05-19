@@ -4,3 +4,24 @@ Place your custom CSS here
 .widget-hello-world {
 
 }
+.mul-date-picker{
+    background-image: url("../CalendarIcon_060036.png");
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: right;
+    min-height:40px;
+    min-width:200px;
+    border:2px solid #B1B1B1;
+    background-color: #ffffff;
+   
+    position: relative;
+    align-items: center;
+    top: -2px;
+    left: 9px;
+    
+}
+.react-datepicker__triangle{
+    left:-65px !important;
+}
+
+

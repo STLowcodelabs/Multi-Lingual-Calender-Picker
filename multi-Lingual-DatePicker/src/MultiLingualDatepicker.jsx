@@ -1,6 +1,6 @@
 import { Component, createElement,React,useState,Select } from "react";
 // import {ru} from "date-fns/esm/locale/ru";
-import{enUS,ru,ar} from "date-fns/esm/locale"
+import{enUS,ru,ar, hi} from "date-fns/esm/locale"
 
 // registerLocale("ptBR", ptBR);
 // registerLocale("en", en);
@@ -20,6 +20,8 @@ const languageOptions=[
     }
     ,{
         label:"ar",value:ar
+    },{
+        label:"hi",value:hi
     }
 
 ];
@@ -32,7 +34,9 @@ constructor(props){
     super(props);
     this.state={
         lan:'en',
-        value:'en'
+        value:'en',
+        date:'',
+        format:'dd-MMM-yyyy'
     }
 }
     render  (){
@@ -56,6 +60,15 @@ constructor(props){
                  })   
                  
             }
+            else if(e.target.value=='hi'){
+                alert(e.target.value)
+                this.setState({
+              
+                    lan:hi,
+                    value:hi
+                 })   
+                 
+            }
             
          
            
@@ -65,7 +78,9 @@ constructor(props){
             <label>ru</label>
             <input type="radio" value="ru" name="ru" onClick={setLocale} /> 
             <label>en</label>
-            <input type="radio" value="en" namw="en" onClick={setLocale}/ >
+            <input type="radio" value="en" name="en" onClick={setLocale}/ >
+            <label>en</label>
+            <input type="radio" value="hi" name="hi" onClick={setLocale}/ >
         </div>
 
        < div className="container">
@@ -86,10 +101,16 @@ constructor(props){
   </div>
 
         <DatePicker locale={this.state.lan} 
+        selected={this.state.date}
+        onChange={(dated)=>{this.setState({
+            date:dated
+        })}}
+        dateFormat={this.state.format}
         peekNextMonth
         showMonthDropdown
         showYearDropdown
-        dropdownMode="select"/>
+        dropdownMode="select"
+        className="mul-date-picker"/>
 
         
 
