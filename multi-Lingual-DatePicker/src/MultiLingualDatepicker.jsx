@@ -33,10 +33,10 @@ export default class MultiLingualDatepicker extends Component {
 constructor(props){
     super(props);
     this.state={
-        lan:'en',
+        lan:'',
         value:'en',
         date:'',
-        format:'dd-MMM-yyyy'
+        format:this.props.dateFormat
     }
 }
     render  (){
@@ -49,7 +49,7 @@ constructor(props){
                     lan:ru,
                     value:ru
                  })   
-                 setValue(e.target.value)
+                 
             }
            else if(e.target.value=='en'){
                 alert(e.target.value)
@@ -104,7 +104,9 @@ constructor(props){
         selected={this.state.date}
         onChange={(dated)=>{this.setState({
             date:dated
-        })}}
+        });
+        alert(dated);
+    this.props.dateTobe.setValue(dated)}}
         dateFormat={this.state.format}
         peekNextMonth
         showMonthDropdown

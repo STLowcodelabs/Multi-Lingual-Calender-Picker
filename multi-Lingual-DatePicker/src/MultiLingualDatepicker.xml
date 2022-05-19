@@ -8,10 +8,40 @@
     <icon/>
     <properties>
         <propertyGroup caption="General">
-            <property key="sampleText" type="string" required="false">
-                <caption>Default value</caption>
-                <description>Sample text input</description>
+            <property key="dateFormat" type="string" required="true">
+                <caption>Date Format</caption>
+                <description>Ex: dd-MMM-yyyy</description>
             </property>
+
+            <property key="placeHolderText" type="string" required="true">
+                <caption>Place Holder text</caption>
+                <description>Please enter the ghost text to enter</description>
+            </property>
+            <property key="localeDate" type="attribute" required="true" onChange="onChangeDate">
+                <caption>Date</caption>
+                <description>Select an attribute to choose a date</description>
+                <attributeTypes>
+                    <attributeType name="String"/>
+                </attributeTypes>
+            </property>
+                      
+            <property key="dateTobe" type="attribute" required="true" onChange="onChangeDate">
+                <caption>Date</caption>
+                <description>Select an attribute to choose a date</description>
+                <attributeTypes>
+                    <attributeType name="DateTime"/>
+                </attributeTypes>
+            </property>
+             <property key="onChangeDate" type="action">
+                <caption>On change</caption>
+                <description/>
+            </property>
+            
+
+            
+           
+            
         </propertyGroup>
+        
     </properties>
 </widget>
